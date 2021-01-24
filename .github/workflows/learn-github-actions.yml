@@ -10,6 +10,7 @@ jobs:
       - run: bats -v
   upload-artifact:
     runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v2
       - run:  touch artifact.txt
       shell: bash
