@@ -8,3 +8,12 @@ jobs:
       - uses: actions/setup-node@v1
       - run: npm install -g bats
       - run: bats -v
+  upload-artifact:
+    runs-on: ubuntu-latest
+      - uses: actions/checkout@v2
+      - run:  touch artifact.txt
+      shell: bash
+      - uses: actions/upload-artifact@v1
+      with:
+        name: githubactions-upload-artifact
+        path: artifact.txt
