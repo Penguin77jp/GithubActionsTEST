@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run:  touch artifact.txt
+      - run:  mkdir UP && touch UP/artifact.txt
         # shell: bash
       - uses: actions/upload-artifact@v1
-      with:
-        name: githubactions-upload-artifact
-        path: artifact.txt
+        with:
+          name: githubactions-upload-artifact
+          path: UP
