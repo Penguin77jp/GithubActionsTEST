@@ -9,7 +9,7 @@ file(GLOB srcFiles
 add_executable(test ${srcFiles})
 set_property(TARGET test PROPERTY CXX_STANDARD 20)
 
-install(TARGETS main)
+install(TARGETS test)
 
 enable_testing()
-add_test(NAME main COMMAND main)
+add_test(NAME test COMMAND test)
