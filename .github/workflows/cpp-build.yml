@@ -9,6 +9,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest]
+        ext: [.exe, '']
 
     steps:
       - uses: actions/checkout@v2
@@ -18,8 +19,8 @@ jobs:
       - name: build
         run: cmake --build build
       # - name: test-run
-        # run: cd build && ./testProj
+        run: cd build && ./testProj${{matrix.ext}}
       - uses: actions/upload-artifact@v1
         with:
-          name: buildFile${{matrix.os}}
+          name: buildFile_${{matrix.os}}
           path: build
