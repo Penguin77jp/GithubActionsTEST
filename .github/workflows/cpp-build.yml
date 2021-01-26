@@ -10,7 +10,7 @@ jobs:
       matrix:
         config:
         - {
-          os: windows-latest, path: 'Debug/testProj.exe'
+          os: windows-latest, path: 'build/Debug/testProj.exe'
         }
         - {
           os: ubuntu-latest, path: 'build/testProj'
@@ -26,7 +26,7 @@ jobs:
       - name: ls check
         run: ls
       - name: test-run
-        run: cd build && ${{matrix.config.path}}
+        run: ${{matrix.config.path}}
       - uses: actions/upload-artifact@v1
         with:
           name: buildFile_${{runner.os}}
