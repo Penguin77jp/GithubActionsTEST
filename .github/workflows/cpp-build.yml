@@ -13,6 +13,7 @@ jobs:
       - name: test
         run: cd build && test
   upload-build:
+    needs: [build-ubuntu]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/upload-artifact@v1
