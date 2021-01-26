@@ -4,7 +4,6 @@ on: [push]
 jobs:
   build-ubuntu:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: configure
@@ -13,3 +12,10 @@ jobs:
         run: cmake --build build
       - name: test
         run: cd build && test
+  upload-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/upload-artifact@v1
+        with:
+          name: buildFile
+          path: build
