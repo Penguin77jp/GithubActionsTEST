@@ -8,6 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        config:
         - {
           os: windows-latest, ext: '.exe'
         }
