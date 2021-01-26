@@ -12,10 +12,10 @@ jobs:
       matrix:
         config:
         - {
-          os: windows-latest, path: 'build/Debug/${{testProj}}.exe'
+          os: windows-latest, path: 'build/Debug/${{projectName}}.exe'
         }
         - {
-          os: ubuntu-latest, path: 'build/${{testProj}}'
+          os: ubuntu-latest, path: 'build/${{projectName}}'
         }
 
     steps:
