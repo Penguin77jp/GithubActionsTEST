@@ -17,9 +17,9 @@ jobs:
         # run: mkdir build && cd build && cmake -DCMAKE_CXX_FLAGS="-Werror" ..
       - name: build
         run: cmake --build build
-      - name: test-run
-        run: cd build && ./testProj
+      # - name: test-run
+        # run: cd build && ./testProj
       - uses: actions/upload-artifact@v1
         with:
-          name: buildFile
+          name: buildFile${{matrix.os}}
           path: build
