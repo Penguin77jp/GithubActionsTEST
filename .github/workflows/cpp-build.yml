@@ -24,7 +24,7 @@ jobs:
       - name: build
         run: cmake --build build
       - name: test-run
-        run: cd build && ./testProj${{runner.ext}}
+        run: cd build && ./testProj${{matrix.config.ext}}
       - uses: actions/upload-artifact@v1
         with:
           name: buildFile_${{runner.os}}
