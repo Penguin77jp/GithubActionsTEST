@@ -13,7 +13,7 @@ jobs:
           os: windows-latest, path: 'Debug/testProj.exe'
         }
         - {
-          os: ubuntu-latest, ext: 'build/testProj'
+          os: ubuntu-latest, path: 'build/testProj'
         }
 
     steps:
