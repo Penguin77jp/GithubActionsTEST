@@ -8,8 +8,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest, ubuntu-latest]
-        ext: ['.exe', '']
+        - {
+          os: windows-latest, ext: '.exe'
+        }
+        - {
+          os: ubuntu-latest, ext: ''
+        }
 
     steps:
       - uses: actions/checkout@v2
