@@ -13,7 +13,7 @@ jobs:
       - name: pwd
         run: pwd
       - name: test
-        run: ./test
+        run: cd build && ./test
       - uses: actions/upload-artifact@v1
         with:
           name: buildFile
