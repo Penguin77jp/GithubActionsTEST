@@ -10,10 +10,10 @@ jobs:
       matrix:
         config:
         - {
-          os: windows-latest, ext: '.exe'
+          os: windows-latest, path: 'Debug/testProj.exe'
         }
         - {
-          os: ubuntu-latest, ext: ''
+          os: ubuntu-latest, ext: 'build/testProj'
         }
 
     steps:
@@ -24,9 +24,9 @@ jobs:
       - name: build
         run: cmake --build build
       - name: ls check
-        run: ls build/
+        run: ls
       - name: test-run
-        run: cd build && ./testProj${{matrix.config.ext}}
+        run: cd build && ${{matrix.config.path}}
       - uses: actions/upload-artifact@v1
         with:
           name: buildFile_${{runner.os}}
