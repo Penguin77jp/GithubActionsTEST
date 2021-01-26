@@ -3,7 +3,6 @@ on: [push]
 
 jobs:
   build-ubuntu:
-    projectName: testProj
     name: ${{matrix.config.os}}
     runs-on: ${{matrix.config.os}}
     strategy:
@@ -11,10 +10,10 @@ jobs:
       matrix:
         config:
         - {
-          os: windows-latest, path: 'build/Debug/${{projectName}}.exe'
+          os: windows-latest, path: 'build/Debug/testProj.exe'
         }
         - {
-          os: ubuntu-latest, path: 'build/${{env.projectName}}'
+          os: ubuntu-latest, path: 'build/testProj'
         }
 
     steps:
