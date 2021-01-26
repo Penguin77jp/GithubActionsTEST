@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
-project(test)
+project(test CXX)
 
 file(GLOB srcFiles
     ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
