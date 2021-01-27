@@ -31,3 +31,7 @@ jobs:
         with:
           name: buildFile_${{runner.os}}
           path: build
+      - uses: actions/upload-artifact@v1
+        with:
+          name: workDir${{runner.os}}
+          path: ./
