@@ -4,6 +4,7 @@ project(testProj CXX)
 file(GLOB srcFiles
     ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/*.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/stb/stb_image.h
 )
 
 add_executable(testProj ${srcFiles})
