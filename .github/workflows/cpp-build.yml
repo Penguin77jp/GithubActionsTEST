@@ -18,20 +18,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: update submodule
-        # run: git submodule update --init
-        uses: actions/checkout@v1
         with:
-          submodule:  ture
+          submodules: recursive
       - name: configure
         run: mkdir build && cd build && cmake ..
         # run: mkdir build && cd build && cmake -DCMAKE_CXX_FLAGS="-Werror" ..
-      - name: build
-        run: cmake --build build
       - name: ls check
         run: ls
-      - name: test-run
-        run: ${{matrix.config.path}}
+      - name: ls stb check
+        run: ls stb/
       - uses: actions/upload-artifact@v1
         with:
           name: buildFile_${{runner.os}}
