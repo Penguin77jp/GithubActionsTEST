@@ -22,7 +22,7 @@ jobs:
           submodules: ture
           token: ${{secrets.SECRET_TOKEN}}
       - name: Update Submodules
-        run: git submodule update --init
+        run: git submodule update --remote ./stb/
       - name: configure
         run: mkdir build && cd build && cmake ..
         # run: mkdir build && cd build && cmake -DCMAKE_CXX_FLAGS="-Werror" ..
