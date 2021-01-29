@@ -17,9 +17,9 @@ jobs:
         }
 
     steps:
-      - uses: actions/checkout@v1
-        with:
-          submodules:  ture
+      - uses: actions/checkout@v2
+      - name: Update Submodules
+        run: git submodule update --remote
       - name: configure
         run: mkdir build && cd build && cmake ..
         # run: mkdir build && cd build && cmake -DCMAKE_CXX_FLAGS="-Werror" ..
