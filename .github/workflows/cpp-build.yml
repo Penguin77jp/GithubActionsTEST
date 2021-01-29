@@ -19,10 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: update submodule
-        # run: git submodule update --init
-        uses: actions/checkout@v1
-        with:
-          submodule:  ture
+        run: git submodule update --init
       - name: configure
         run: mkdir build && cd build && cmake ..
         # run: mkdir build && cd build && cmake -DCMAKE_CXX_FLAGS="-Werror" ..
