@@ -26,12 +26,8 @@ jobs:
       - name: configure
         run: mkdir build && cd build && cmake ..
         # run: mkdir build && cd build && cmake -DCMAKE_CXX_FLAGS="-Werror" ..
-      - name: build
-        run: cmake --build build
       - name: ls check
         run: ls
-      - name: test-run
-        run: ${{matrix.config.path}}
       - uses: actions/upload-artifact@v1
         with:
           name: buildFile_${{runner.os}}
