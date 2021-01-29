@@ -17,12 +17,9 @@ jobs:
         }
 
     steps:
-      - uses: actions/checkout@v1
-        with:
-          submodules: ture
-          token: ${{secrets.SECRET_TOKEN}}
+      - uses: actions/checkout@v2
       - name: Update Submodules
-        run: git submodule update --init ./stb/
+        run: git submodule update --init --recursive
       - name: configure
         run: mkdir build && cd build && cmake ..
         # run: mkdir build && cd build && cmake -DCMAKE_CXX_FLAGS="-Werror" ..
