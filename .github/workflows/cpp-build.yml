@@ -18,6 +18,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: 'ture'
+          token: ${{secrets.SECRET_TOKEN}}
       - name: Update Submodules
         run: git submodule update --init
       - name: configure
